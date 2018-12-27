@@ -1,0 +1,31 @@
+buildscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2/" }
+        mavenCentral()
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+group = 'trubr'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile('io.jsonwebtoken:jjwt-api:0.10.5')
+    compile('io.jsonwebtoken:jjwt-impl:0.10.5')
+    compile('io.jsonwebtoken:jjwt-jackson:0.10.5')
+    compile('com.google.guava:guava:27.0-jre')
+
+    compile group: 'com.madgag.spongycastle', name: 'bcpkix-jdk15on', version: '1.58.0.0'
+    compile group: 'com.madgag.spongycastle', name: 'bcpg-jdk15on', version: '1.58.0.0'
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'org.assertj', name: 'assertj-core', version: '3.11.1'
+}
